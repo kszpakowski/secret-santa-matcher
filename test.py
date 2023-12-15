@@ -52,15 +52,15 @@ class TestSecretSanta(unittest.TestCase):
             )
 
     def test_every_person_should_get_one_gift(self):
-        recivers = dict.fromkeys(test_participants, 0)
+        recipients = dict.fromkeys(test_participants, 0)
 
         for _, r in self.pairs:
-            recivers[r] = recivers[r] + 1
+            recipients[r] = recipients[r] + 1
 
-        for reciever in recivers:
-            val = recivers[reciever]
+        for recipient in recipients:
+            val = recipients[recipient]
             self.assertEqual(
-                val, 1, f"{reciever} desn't get exactly one gift - gets {val} instead"
+                val, 1, f"{recipient} desn't get exactly one gift - gets {val} instead"
             )
 
 
